@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Project
         run: |
-          BUILD_ENV=production   
+          BUILD_ENV=nonprod 
 
           echo "Build Environment: $BUILD_ENV"
 
