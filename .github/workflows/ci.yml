@@ -15,10 +15,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'        
+          node-version: '24'
 
       - name: Install Dependencies
         run: npm ci
 
       - name: Build Project
-        run: npm run build
+        run: |
+          BUILD_ENV=production   
+
+          echo "Build Environment: $BUILD_ENV"
+
+          if [ "$BUILD_ENV" = "nonprod" ]; then
+            echo "Running NON-PROD build"
+            npm run build:dev
+          else
+            echo "Running PROD build"
+            npm run build
+          fi
