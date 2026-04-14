@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "24": "^0.0.0",
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.16",
     "gsap": "^3.13.0",
